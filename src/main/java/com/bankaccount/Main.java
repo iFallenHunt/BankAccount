@@ -7,4 +7,3 @@ public class Main {
         MainMenu.main(args);
     }
 }
-
