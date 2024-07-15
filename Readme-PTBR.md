@@ -1,7 +1,7 @@
 # Projeto de conta bancária
 
 ## Índice
-- [Visão geral](#visão geral)
+- [Visão geral](#visão-geral)
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Características](#características)
 - [Pré-requisitos](#pré-requisitos)
