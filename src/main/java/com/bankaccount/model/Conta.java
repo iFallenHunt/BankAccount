@@ -1,8 +1,11 @@
-package com.bank.tech;
+package com.bankaccount.model;
 
+import com.bankaccount.service.IConta;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public abstract class Conta implements IConta {
 
     private static final int AGENCIA_PADRAO = 1;
@@ -28,7 +31,7 @@ public abstract class Conta implements IConta {
     }
 
     @Override
-    public void tranferir(double valor, Conta contaDestino) {
+    public void transferir(double valor, Conta contaDestino) {
         this.sacar(valor);
         contaDestino.depositar(valor);
     }
@@ -38,8 +41,4 @@ public abstract class Conta implements IConta {
         System.out.println(String.format("Numero: %d", this.numero));
         System.out.println(String.format("Saldo: %.2f", this.saldo));
     }
-
-    public void sacar() {}
-    public void depositar() {}
-    public void transferir() {}
 }

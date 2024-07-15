@@ -1,10 +1,10 @@
-package com.bank.tech;
+package com.bankaccount.model;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Banco {
+public class Cliente {
     private String nome;
 }
