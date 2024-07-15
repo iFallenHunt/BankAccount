@@ -1,15 +1,15 @@
 package com.bankaccount.view;
 
-import com.bankaccount.model.Cliente;
+import com.bankaccount.model.Client;
 
 import javax.swing.*;
 
 public class AccountSettingsScreen {
-    public static void updateAccountSettings(Cliente cliente) {
-        String novoNome = JOptionPane.showInputDialog("Atualize o nome do cliente:", cliente.getNome());
-        if (novoNome != null && !novoNome.trim().isEmpty()) {
-            cliente.setNome(novoNome);
-            JOptionPane.showMessageDialog(null, "Nome do cliente atualizado para " + cliente.getNome());
+    public static void updateAccountSettings(Client client) {
+        String newName = JOptionPane.showInputDialog("Update client's name:", client.getName());
+        if (newName != null && !newName.trim().isEmpty()) {
+            client.setName(newName);
+            JOptionPane.showMessageDialog(null, "Client's name updated to " + client.getName());
         }
     }
 }

@@ -1,20 +1,20 @@
 package com.bankaccount.view;
 
-import com.bankaccount.model.Cliente;
-import com.bankaccount.model.Conta;
+import com.bankaccount.model.Client;
+import com.bankaccount.model.Account;
 
 import javax.swing.*;
 
 public class MainMenu {
 	public static void main(String[] args) {
-		String[] options = {"Login", "Criar Conta", "Ver Saldo", "Histórico de Transações", "Configurações da Conta", "Sair"};
-		Conta conta = null;
-		Cliente cliente = new Cliente();
-		String[] transactions = {}; // Para armazenar histórico de transações
+		String[] options = {"Login", "Create Account", "View Balance", "Transaction History", "Account Settings", "Exit"};
+		Account account = null;
+		Client client = new Client();
+		String[] transactions = {}; // To store transaction history
 		int choice;
 
 		do {
-			choice = JOptionPane.showOptionDialog(null, "Selecione uma opção", "Menu Principal",
+			choice = JOptionPane.showOptionDialog(null, "Select an option", "Main Menu",
 					JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
 			switch (choice) {
@@ -26,28 +26,28 @@ public class MainMenu {
 					}
 					break;
 				case 1:
-					conta = CreateAccountScreen.createAccount();
+					account = CreateAccountScreen.createAccount();
 					break;
 				case 2:
-					if (conta != null) {
-						BalanceScreen.showBalance(conta);
+					if (account != null) {
+						BalanceScreen.showBalance(account);
 					} else {
-						JOptionPane.showMessageDialog(null, "Nenhuma conta criada");
+						JOptionPane.showMessageDialog(null, "No account created");
 					}
 					break;
 				case 3:
 					TransactionHistoryScreen.showHistory(transactions);
 					break;
 				case 4:
-					if (cliente != null) {
-						AccountSettingsScreen.updateAccountSettings(cliente);
+					if (client != null) {
+						AccountSettingsScreen.updateAccountSettings(client);
 					} else {
-						JOptionPane.showMessageDialog(null, "Nenhum cliente configurado");
+						JOptionPane.showMessageDialog(null, "No client configured");
 					}
 					break;
 			}
 		} while (choice != 5);
 
-		JOptionPane.showMessageDialog(null, "Obrigado por usar o Bank Account. Até logo!");
+		JOptionPane.showMessageDialog(null, "Thank you for using Bank Account. See you soon!");
 	}
 }
